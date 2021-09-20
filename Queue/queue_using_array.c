@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 5
+#define N 50
 int queue[N];
 int front = -1;
 int rear = -1;
