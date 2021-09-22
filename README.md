@@ -1,1 +1,1 @@
-# DSA-in-C
+# C Data Structures and Algorithms
