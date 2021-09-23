@@ -10,6 +10,7 @@ struct Node
 struct Node *head;
 struct Node *newnode, *temp;
 
+// create Singly Linked List
 void create()
 {
     int i, x;
@@ -38,6 +39,7 @@ void create()
     }
 }
 
+// Display Singly Linked List
 void display()
 {
     if (head == NULL)
