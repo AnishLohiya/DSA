@@ -4,7 +4,7 @@
 Implement the following stack operations : 
 1. Push 
 2. Pop 
-3. Peep 
+3. Peek 
 4. Display
 */
 
