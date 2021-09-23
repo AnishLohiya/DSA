@@ -1,3 +1,13 @@
+// Implementation of stack using Linked List
+
+/*
+Implement the following stack operations : 
+1. Push 
+2. Pop 
+3. Peek
+4. Display
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
