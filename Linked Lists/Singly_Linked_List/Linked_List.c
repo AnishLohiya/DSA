@@ -196,7 +196,7 @@ void reverse()
 
 int main()
 {
-    int opt, value, loct;
+    int opt;
     create();
     while (1)
     {
