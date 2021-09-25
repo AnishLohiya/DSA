@@ -1,5 +1,3 @@
-// Code For Singly Linked List
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -84,6 +82,47 @@ void insertAtPos()
     }
     ptr->next = temp->next;
     temp->next = ptr;
+}
+
+void insert_before()
+{
+    int c, d;
+    struct Node *newNode, *ptr, *preptr;
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    printf("Enter the data:");
+    scanf("%d", &d);
+    newNode->data = d;
+    printf("Enter the value before which the data has to be inserted:");
+    scanf("%d", &c);
+    ptr = head;
+    while (ptr->data != c)
+    {
+        preptr = ptr;
+        ptr = ptr->next;
+    }
+    preptr->next = newNode;
+    newNode->next = ptr;
+}
+
+void insert_after()
+{
+    int c, d;
+    struct Node *newNode, *ptr, *preptr;
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    printf("Enter the data:");
+    scanf("%d", &d);
+    newNode->data = d;
+    printf("Enter the value after which the data has to be inserted:");
+    scanf("%d", &c);
+    ptr = head;
+    preptr = ptr;
+    while (preptr->data != c)
+    {
+        preptr = ptr;
+        ptr = ptr->next;
+    }
+    preptr->next = newNode;
+    newNode->next = ptr;
 }
 
 void delatbeg()
@@ -234,12 +273,14 @@ int main()
         printf("4.Insert at beginning\n");
         printf("5.Insert at End\n");
         printf("6.Insert at Position\n");
-        printf("7.Delete from beginning\n");
-        printf("8.Delete from end\n");
-        printf("9.Delete at Position\n");
-        printf("10.Reverse\n");
-        printf("11.Length of Linked List\n");
-        printf("12.Exit\n");
+        printf("7.Insert before Position\n");
+        printf("8.Insert after Position\n");
+        printf("9.Delete from beginning\n");
+        printf("10.Delete from end\n");
+        printf("11.Delete at Position\n");
+        printf("12.Reverse\n");
+        printf("13.Length of Linked List\n");
+        printf("14.Exit\n");
         scanf("%d", &opt);
 
         switch (opt)
@@ -263,21 +304,27 @@ int main()
             insertAtPos();
             break;
         case 7:
-            delatbeg();
+            insert_before();
             break;
         case 8:
-            delatend();
+            insert_after();
             break;
         case 9:
-            delAtPos();
+            delatbeg();
             break;
         case 10:
-            reverse();
+            delatend();
             break;
         case 11:
-            get_length();
+            delAtPos();
             break;
         case 12:
+            reverse();
+            break;
+        case 13:
+            get_length();
+            break;
+        case 14:
             exit(0);
         default:
             printf("Unknown Choice !!\n");
