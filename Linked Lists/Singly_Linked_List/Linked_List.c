@@ -172,25 +172,19 @@ void delatend()
 
 void delAtPos()
 {
-    int pos;
+    int pos,i=1;
     printf("Enter the postion to be deleted in linked list\n");
     scanf("%d", &pos);
     struct Node *ptr, *ptr1;
-    int i;
     ptr = head;
-    for (i = 0; i < pos; i++)
+    while (i < pos - 1)
     {
-        ptr1 = ptr;
         ptr = ptr->next;
-
-        if (ptr == NULL)
-        {
-            printf("\nCan't delete");
-            return;
-        }
+        i++;
     }
-    ptr1->next = ptr->next;
-    free(ptr);
+    ptr1 = ptr->next;
+    ptr->next  = ptr1->next;
+    free(ptr1);
     printf("\nDeleted node %d ", pos + 1);
 }
 
