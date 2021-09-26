@@ -1,5 +1,3 @@
-// Code For Singly Linked List
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,7 +6,8 @@ struct Node
     int data;
     struct Node *next;
 };
-struct Node *head;
+
+struct Node *head = NULL;
 
 void create()
 {
@@ -66,7 +65,7 @@ void insertatend()
     temp->next = ins;
 }
 
-void insertatloc()
+void insertAtPos()
 {
     int x, pos, i = 1;
     printf("Enter The Value To Be Inserted \n");
@@ -85,6 +84,47 @@ void insertatloc()
     temp->next = ptr;
 }
 
+void insert_before()
+{
+    int c, d;
+    struct Node *newNode, *ptr, *preptr;
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    printf("Enter the data:");
+    scanf("%d", &d);
+    newNode->data = d;
+    printf("Enter the value before which the data has to be inserted:");
+    scanf("%d", &c);
+    ptr = head;
+    while (ptr->data != c)
+    {
+        preptr = ptr;
+        ptr = ptr->next;
+    }
+    preptr->next = newNode;
+    newNode->next = ptr;
+}
+
+void insert_after()
+{
+    int c, d;
+    struct Node *newNode, *ptr, *preptr;
+    newNode = (struct Node *)malloc(sizeof(struct Node));
+    printf("Enter the data:");
+    scanf("%d", &d);
+    newNode->data = d;
+    printf("Enter the value after which the data has to be inserted:");
+    scanf("%d", &c);
+    ptr = head;
+    preptr = ptr;
+    while (preptr->data != c)
+    {
+        preptr = ptr;
+        ptr = ptr->next;
+    }
+    preptr->next = newNode;
+    newNode->next = ptr;
+}
+
 void delatbeg()
 {
     if (head == NULL)
@@ -94,6 +134,7 @@ void delatbeg()
     else
     {
         struct Node *del = (struct Node *)malloc(sizeof(struct Node));
+        printf("Delete Element is %d\n", head->data);
         del = head;
         head = head->next;
         free(del);
@@ -124,31 +165,26 @@ void delatend()
             temp = temp->next;
         }
     }
+    printf("Deleted Element is %d\n", temp->data);
     del->next = NULL;
     free(temp);
 }
 
 void delAtPos()
 {
-    int pos;
+    int pos, i = 1;
     printf("Enter the postion to be deleted in linked list\n");
     scanf("%d", &pos);
     struct Node *ptr, *ptr1;
-    int i;
     ptr = head;
-    for (i = 0; i < pos; i++)
+    while (i < pos - 1)
     {
-        ptr1 = ptr;
         ptr = ptr->next;
-
-        if (ptr == NULL)
-        {
-            printf("\nCan't delete");
-            return;
-        }
+        i++;
     }
-    ptr1->next = ptr->next;
-    free(ptr);
+    ptr1 = ptr->next;
+    ptr->next = ptr1->next;
+    free(ptr1);
     printf("\nDeleted node %d ", pos + 1);
 }
 
@@ -164,16 +200,29 @@ void display()
     printf("%d ", temp->data);
 }
 
-void get_length()
+void sort_list()
 {
-    int count = 0;
-    struct Node *temp = head;
-    while (temp != NULL)
+    struct Node *ptr1, *ptr2;
+    int temp;
+    ptr1 = head;
+    while (ptr1->next != NULL)
     {
-        count++;
-        temp = temp->next;
+        ptr2 = ptr1->next;
+        while (ptr2 != NULL)
+        {
+
+            if (ptr1->data > ptr2->data)
+            {
+                temp = ptr1->data;
+                ptr1->data = ptr2->data;
+                ptr2->data = temp;
+            }
+            ptr2 = ptr2->next;
+        }
+
+        ptr1 = ptr1->next;
     }
-    printf("Length of the Linked List is %d\n", count);
+    display();
 }
 
 void reverse()
@@ -194,59 +243,85 @@ void reverse()
     display();
 }
 
+void get_length()
+{
+    int count = 0;
+    struct Node *temp = head;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    printf("Length of the Linked List is %d\n", count);
+}
+
 int main()
 {
-    int opt, value, loct;
-    create();
+    int opt;
     while (1)
     {
         printf("\nwhich operation do you want to perform?\n");
-        printf("1.Insert at beginning\n");
-        printf("2.Insert at end\n");
-        printf("3.Insert at specific position\n");
-        printf("4.Delete from beginning\n");
-        printf("5.Delete from end\n");
-        printf("6.Delete at specific value\n");
-        printf("7.Display\n");
-        printf("8.Length\n");
-        printf("9.Reverse\n");
-        printf("10.Exit\n");
-
+        printf("1.Create a Linked List\n");
+        printf("2.Display\n");
+        printf("3.Sort\n");
+        printf("4.Insert at beginning\n");
+        printf("5.Insert at End\n");
+        printf("6.Insert at Position\n");
+        printf("7.Insert before Position\n");
+        printf("8.Insert after Position\n");
+        printf("9.Delete from beginning\n");
+        printf("10.Delete from end\n");
+        printf("11.Delete at Position\n");
+        printf("12.Reverse\n");
+        printf("13.Length of Linked List\n");
+        printf("14.Exit\n");
         scanf("%d", &opt);
 
         switch (opt)
         {
         case 1:
-            insertatbeg();
+            create();
             break;
         case 2:
-            insertatend();
-            break;
-        case 3:
-            insertatloc();
-            break;
-        case 4:
-            delatbeg();
-            break;
-        case 5:
-            delatend();
-            break;
-        case 6:
-            delAtPos();
-            break;
-        case 7:
             display();
             break;
+        case 3:
+            sort_list();
+            break;
+        case 4:
+            insertatbeg();
+            break;
+        case 5:
+            insertatend();
+            break;
+        case 6:
+            insertAtPos();
+            break;
+        case 7:
+            insert_before();
+            break;
         case 8:
-            get_length();
+            insert_after();
             break;
         case 9:
-            reverse();
+            delatbeg();
             break;
         case 10:
+            delatend();
+            break;
+        case 11:
+            delAtPos();
+            break;
+        case 12:
+            reverse();
+            break;
+        case 13:
+            get_length();
+            break;
+        case 14:
             exit(0);
         default:
-            printf("Wrong Choice!!\n");
+            printf("Unknown Choice !!\n");
         }
     }
     return 0;
