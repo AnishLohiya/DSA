@@ -277,6 +277,14 @@ void search()
     }
 }
 
+void Concatenate()
+{
+    printf("Enter The Linked List to be concatenated\n");
+    create();
+    printf("Concatenated Linked list\n");
+    display();
+}
+
 int main()
 {
     int opt;
@@ -297,7 +305,8 @@ int main()
         printf("12.Reverse\n");
         printf("13.Length of Linked List\n");
         printf("14.Search Elment\n");
-        printf("15.Exit\n");
+        printf("15.Concatenate Linked List\n");
+        printf("16.Exit\n");
         scanf("%d", &opt);
 
         switch (opt)
@@ -345,6 +354,9 @@ int main()
             search();
             break;
         case 15:
+            Concatenate();
+            break;
+        case 16:
             exit(0);
         default:
             printf("Unknown Choice !!\n");
