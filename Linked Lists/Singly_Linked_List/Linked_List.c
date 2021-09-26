@@ -216,6 +216,29 @@ void delete_after()
     }
 }
 
+void update_element()
+{
+    int update_ele;
+    int element;
+    struct Node *temp;
+    temp = head;
+    printf("\nEnter the element to be updated in the list : ");
+    scanf("%d", &element);
+    while (temp != NULL)
+    {
+        if (temp->data == element)
+        {
+            printf("\nEnter the new data to update the old data : ");
+            scanf("%d", &update_ele);
+            temp->data = update_ele;
+        }
+        else
+        {
+            temp = temp->next;
+        }
+    }
+}
+
 void display()
 {
     printf("Displaying Linked List\n");
@@ -331,11 +354,12 @@ int main()
         printf("10.Delete from end\n");
         printf("11.Delete at Position\n");
         printf("12.Delete After a Node\n");
-        printf("13.Reverse\n");
-        printf("14.Length of Linked List\n");
-        printf("15.Search Elment\n");
-        printf("16.Concatenate Linked List\n");
-        printf("17.Exit\n");
+        printf("13.Update Element\n");
+        printf("14.Reverse\n");
+        printf("15.Length of Linked List\n");
+        printf("16.Search Elment\n");
+        printf("17.Concatenate Linked List\n");
+        printf("18.Exit\n");
         scanf("%d", &opt);
 
         switch (opt)
@@ -377,18 +401,21 @@ int main()
             delete_after();
             break;
         case 13:
-            reverse();
+            update_element();
             break;
         case 14:
-            get_length();
+            reverse();
             break;
         case 15:
-            search();
+            get_length();
             break;
         case 16:
-            Concatenate();
+            search();
             break;
         case 17:
+            Concatenate();
+            break;
+        case 18:
             exit(0);
         default:
             printf("Unknown Choice !!\n");
