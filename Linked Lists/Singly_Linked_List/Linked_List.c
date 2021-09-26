@@ -255,6 +255,28 @@ void get_length()
     printf("Length of the Linked List is %d\n", count);
 }
 
+void search()
+{
+    int x, i = 1;
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode = head;
+    if (newNode == NULL)
+    {
+        printf("Linekd List is empty\n");
+    }
+    else
+    {
+        printf("Enter the data you want to search\n");
+        scanf("%d", &x);
+        while (newNode->data != x)
+        {
+            newNode = newNode->next;
+            i++;
+        }
+        printf("Node found at %d\n", i);
+    }
+}
+
 int main()
 {
     int opt;
@@ -274,7 +296,8 @@ int main()
         printf("11.Delete at Position\n");
         printf("12.Reverse\n");
         printf("13.Length of Linked List\n");
-        printf("14.Exit\n");
+        printf("14.Search Elment\n");
+        printf("15.Exit\n");
         scanf("%d", &opt);
 
         switch (opt)
@@ -319,6 +342,9 @@ int main()
             get_length();
             break;
         case 14:
+            search();
+            break;
+        case 15:
             exit(0);
         default:
             printf("Unknown Choice !!\n");
