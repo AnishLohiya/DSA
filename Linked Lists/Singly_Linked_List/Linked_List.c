@@ -188,6 +188,32 @@ void delAtPos()
     printf("\nDeleted node %d ", pos + 1);
 }
 
+void delete_after()
+{
+    int c;
+    printf("Enter the value after which the data has to be deleted:");
+    scanf("%d", &c);
+    struct Node *ptr, *preptr, *temp;
+    if (head == NULL)
+    {
+        printf("Linked List is empty\n");
+    }
+    else
+    {
+        ptr = head;
+        preptr = ptr;
+        while (preptr->data != c)
+        {
+            preptr = ptr;
+            ptr = ptr->next;
+        }
+        temp = ptr;
+        preptr->next = temp->next;
+
+        free(temp);
+    }
+}
+
 void display()
 {
     printf("Displaying Linked List\n");
@@ -302,11 +328,12 @@ int main()
         printf("9.Delete from beginning\n");
         printf("10.Delete from end\n");
         printf("11.Delete at Position\n");
-        printf("12.Reverse\n");
-        printf("13.Length of Linked List\n");
-        printf("14.Search Elment\n");
-        printf("15.Concatenate Linked List\n");
-        printf("16.Exit\n");
+        printf("12.Delete After a Node\n");
+        printf("13.Reverse\n");
+        printf("14.Length of Linked List\n");
+        printf("15.Search Elment\n");
+        printf("16.Concatenate Linked List\n");
+        printf("17.Exit\n");
         scanf("%d", &opt);
 
         switch (opt)
@@ -345,18 +372,21 @@ int main()
             delAtPos();
             break;
         case 12:
-            reverse();
+            delete_after();
             break;
         case 13:
-            get_length();
+            reverse();
             break;
         case 14:
-            search();
+            get_length();
             break;
         case 15:
-            Concatenate();
+            search();
             break;
         case 16:
+            Concatenate();
+            break;
+        case 17:
             exit(0);
         default:
             printf("Unknown Choice !!\n");
