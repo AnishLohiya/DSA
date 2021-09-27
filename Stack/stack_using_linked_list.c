@@ -19,6 +19,8 @@ struct Stack
 
 struct Stack *top = NULL;
 
+
+// Push Operation
 void push()
 {
     int x;
@@ -30,6 +32,7 @@ void push()
     top = newNode;
 }
 
+// Pop Operation
 void pop()
 {
     struct Stack *temp = (struct Stack *)malloc(sizeof(struct Stack));
@@ -46,6 +49,7 @@ void pop()
     }
 }
 
+// Peek Operation
 void peek()
 {
     if (top == NULL)
@@ -58,6 +62,7 @@ void peek()
     }
 }
 
+// Display
 void display()
 {
     struct Stack *temp = (struct Stack *)malloc(sizeof(struct Stack));
