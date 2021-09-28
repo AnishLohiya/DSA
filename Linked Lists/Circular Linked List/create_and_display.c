@@ -11,6 +11,7 @@ struct Node
 struct Node *head = NULL;
 struct Node *tail = NULL;
 
+//create
 void create()
 {
     int i, x;
@@ -36,6 +37,7 @@ void create()
     }
 }
 
+// Display
 void display()
 {
     struct Node *temp = head;
