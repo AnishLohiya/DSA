@@ -1,4 +1,4 @@
-// Singly Linked List
+// Singly Linked List Program
 
 #include <stdio.h>
 #include <stdlib.h>
