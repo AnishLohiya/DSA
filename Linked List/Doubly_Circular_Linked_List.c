@@ -73,6 +73,7 @@ void display()
             temp = temp->next;
         } while (temp != tail->next);
     }
+    printf("\n");
 }
 int main()
 {
