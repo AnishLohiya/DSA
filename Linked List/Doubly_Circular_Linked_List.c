@@ -58,6 +58,26 @@ void insertAtBeg()
     }
 }
 
+void insertAtEnd()
+{
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    printf("Enter data to be inserted: ");
+    scanf("%d", &newNode->data);
+    if (head == NULL)
+    {
+        head = tail = newNode;
+        newNode->next = newNode->prev = head;
+    }
+    else
+    {
+        newNode->prev = tail->next;
+        tail->next = newNode;
+        newNode->next = head;
+        head->prev = newNode;
+        tail = newNode;
+    }
+}
+
 void display()
 {
     struct Node *temp = head;
