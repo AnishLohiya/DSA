@@ -70,7 +70,7 @@ void insertAtEnd()
     }
     else
     {
-        newNode->prev = tail->next;
+        newNode->prev = tail;
         tail->next = newNode;
         newNode->next = head;
         head->prev = newNode;
