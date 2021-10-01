@@ -106,6 +106,80 @@ void insertAtPos()
     }
 }
 
+void deleteAtBeg()
+{
+    struct Node *temp = head;
+    if (head == NULL)
+    {
+        printf("Linked List in Empty\n");
+    }
+    else if (head == tail)
+    {
+        head = tail = 0;
+        free(temp);
+    }
+    else
+    {
+        head = head->next;
+        head->prev = tail;
+        tail->next = head;
+        free(temp);
+    }
+}
+
+void deleteAtEnd()
+{
+    struct Node *temp = tail;
+    if (head == NULL)
+    {
+        printf("Linked List in Empty\n");
+    }
+    else if (head == tail)
+    {
+        head = tail = 0;
+        free(temp);
+    }
+    else
+    {
+        tail = tail->prev;
+        tail->next = head;
+        head->prev = tail;
+        free(temp);
+    }
+}
+
+void deleteAtPos()
+{
+    int pos, i = 0;
+    struct Node *temp = head;
+
+    printf("Enter position: \n");
+    scanf("%d", &pos);
+    if (pos == 1)
+    {
+        deleteAtBeg();
+    }
+    else
+    {
+        while (i < pos - 1)
+        {
+            temp = temp->next;
+            i++;
+        }
+        (temp->prev)->next = temp->next;
+        (temp->next)->prev = temp->prev;
+        if (temp->next == head)
+        {
+            tail = temp->prev;
+            free(temp);
+        }
+        else
+        {
+            free(temp);
+        }
+    }
+}
+
 void display()
 {
     struct Node *temp = head;
