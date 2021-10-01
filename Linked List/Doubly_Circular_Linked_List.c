@@ -78,6 +78,34 @@ void insertAtEnd()
     }
 }
 
+void insertAtPos()
+{
+    int pos, i = 1;
+    struct Node *temp = head;
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    printf("Enter the postion at which data is inserted: ");
+    scanf("%d", &pos);
+
+    if (pos == 1)
+    {
+        insertAtBeg();
+    }
+    else
+    {
+        printf("Enter the postion at which data is inserted: ");
+        scanf("%d", &newNode->data);
+        while (i < pos - 1)
+        {
+            temp = temp->next;
+            i++;
+        }
+        newNode->prev = temp;
+        newNode->next = temp->next;
+        temp->next->prev = newNode;
+        temp->next = newNode;
+    }
+}
+
 void display()
 {
     struct Node *temp = head;
