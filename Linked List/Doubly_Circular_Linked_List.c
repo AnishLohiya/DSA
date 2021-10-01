@@ -180,6 +180,47 @@ void deleteAtPos()
     }
 }
 
+void get_length()
+{
+    int count = 1;
+    struct Node *temp = head;
+    if (head == NULL)
+    {
+        printf("Linked List is empty\n");
+    }
+    else
+    {
+        while (temp != tail)
+        {
+            temp = temp->next;
+            count++;
+        }
+    }
+    printf("Length of Linked List is %d\n", count);
+}
+
+void search()
+{
+    int x, i = 1;
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode = tail->next;
+    if (newNode == NULL)
+    {
+        printf("Linked List is empty\n");
+    }
+    else
+    {
+        printf("Enter the data you want to search\n");
+        scanf("%d", &x);
+        while (newNode->data != x)
+        {
+            newNode = newNode->next;
+            i++;
+        }
+        printf("Node found at %d\n", i);
+    }
+}
+
 void display()
 {
     struct Node *temp = head;
