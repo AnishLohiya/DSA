@@ -180,6 +180,22 @@ void deleteAtPos()
     }
 }
 
+void update()
+{
+    struct Node *temp = head;
+    int c, d;
+    printf("Enter the value to be updated: \n");
+    scanf("%d", &c);
+    printf("Enter the data:");
+    scanf("%d", &d);
+
+    while (temp->data != c)
+    {
+        temp = temp->next;
+    }
+    temp->data = d;
+}
+
 void get_length()
 {
     int count = 1;
