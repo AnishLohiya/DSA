@@ -272,7 +272,68 @@ void display()
 }
 int main()
 {
-    create();
-    display();
+    int opt;
+    while (1)
+    {
+        printf("\nwhich operation do you want to perform?\n");
+        printf("1.Create a Linked List\n");
+        printf("2.Display\n");
+        printf("3.Search\n");
+        printf("4.Count Nodes\n");
+        printf("5.Insert at Beginning\n");
+        printf("6.Insert at End\n");
+        printf("7.Insert at Position\n");
+        printf("8.Delete at Beginning\n");
+        printf("9.Delete at End\n");
+        printf("10.Delete at given Position\n");
+        printf("11.Update Element \n");
+        printf("12.Update Element at Position\n");
+        printf("13.Exit\n");
+        scanf("%d", &opt);
+
+        switch (opt)
+        {
+        case 1:
+            create();
+            break;
+        case 2:
+            display();
+            break;
+        case 3:
+            search();
+            break;
+        case 4:
+            get_length();
+            break;
+        case 5:
+            insertAtBeg();
+            break;
+        case 6:
+            insertAtEnd();
+            break;
+        case 7:
+            insertAtPos();
+            break;
+        case 8:
+            deleteAtBeg();
+            break;
+        case 9:
+            deleteAtEnd();
+            break;
+        case 10:
+            deleteAtPos();
+            break;
+        case 11:
+            update();
+            break;
+        case 12:
+            updateAtPos();
+            break;
+        case 13:
+            exit(0);
+        default:
+            printf("Unknown Choice !!\n");
+        }
+    }
     return 0;
 }
