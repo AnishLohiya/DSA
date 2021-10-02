@@ -196,6 +196,22 @@ void update()
     temp->data = d;
 }
 
+void updateAtPos()
+{
+    struct Node *temp = head;
+    int pos, i = 0, x;
+    printf("Enter position to be updated: \n");
+    scanf("%d", &pos);
+    printf("Enter the data: \n");
+    scanf("%d", &x);
+    while (i < pos - 1)
+    {
+        temp = temp->next;
+        i++;
+    }
+    temp->data = x;
+}
+
 void get_length()
 {
     int count = 1;
