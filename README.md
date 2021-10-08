@@ -1,6 +1,12 @@
-# Data-structures and Algorithms
+<p align="center"><img src="https://image.flaticon.com/icons/svg/302/302389.svg" align="center" width="175"></p>
+<h1 align="center">Data Structures and Algorithms Implementation</h1>
+<p align="center">
+  <img width="180" height="40" src="https://forthebadge.com/images/badges/built-with-love.svg">
+</p>
+<hr>
+<p align="center"><b>Hi! This is my Data Structures and Algorithms Implementation repository.</b>
+</p>
 
-Repository meant for understanding and practice the use of various Data structures and Algorithms used in programming.
 
 ## 🌟Table of Contents🌟 
 
