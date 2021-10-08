@@ -11,15 +11,15 @@
 ## 🌟Table of Contents🌟 
 
 - [Linked List](https://github.com/AnishLohiya/DSA-in-C/tree/master/Linked%20List)
-  - ***Singly*** Linked List
-  - ***Doubly*** Linked List
-  - ***Circular*** Linked List
-  - ***Doubly Circular*** Linked List
+  - ***Singly*** Linked List   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Linked%20List/Singly_Linked_List.c)  
+  - ***Doubly*** Linked List    [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Linked%20List/Doubly_Linked_List.c) 
+  - ***Circular*** Linked List    [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Linked%20List/Circular_Linked_List.c) 
+  - ***Doubly Circular*** Linked List    [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Linked%20List/Doubly_Circular_Linked_List.c) 
 - [Stack](https://github.com/AnishLohiya/DSA-in-C/tree/master/Stack)
-   - Stack Using ***Array***
-   - Stack using ***Linked List*** 
+   - Stack Using ***Array***   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Stack/stack_using_arrays.c) 
+   - Stack using ***Linked List***  [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Stack/stack_using_linked_list.c) 
 - [Queue](https://github.com/AnishLohiya/DSA-in-C/tree/master/Queue)
-   - Queue using ***Array***
-   - Queue using ***Linked List***
-   - ***Cirular*** Queue using ***Array*** 
-   - ***Circular*** Queue using ***Linked List***
+   - Queue using ***Array***   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_array.c) 
+   - Queue using ***Linked List***  [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_linked_list.c) 
+   - ***Cirular*** Queue using ***Array***   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_array.c) 
+   - ***Circular*** Queue using ***Linked List***   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_linked_list.c) 
