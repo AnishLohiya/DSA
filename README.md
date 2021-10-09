@@ -1,3 +1,5 @@
+# [DSA-in-C](https://github.com/AnishLohiya/DSA-in-C)
+
 <p align="center"><img src="https://image.flaticon.com/icons/svg/302/302389.svg" align="center" width="175"></p>
 <h1 align="center">Data Structures and Algorithms in C</h1>
 <p align="center">
