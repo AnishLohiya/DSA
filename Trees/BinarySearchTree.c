@@ -187,6 +187,23 @@ void PostOrder(struct Node *root)
     printf("%d ", root->data);
 }
 
+void MirrorTree(struct Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    struct Node *temp = root;
+
+    MirrorTree(root->left);
+    MirrorTree(root->right);
+
+    temp = root->left;
+    root->left = root->right;
+    root->right = temp;
+}
+
 int main(){
     
     return 0;
