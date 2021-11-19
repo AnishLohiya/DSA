@@ -121,6 +121,39 @@ void search(struct Node *root, int val)
     }
 }
 
+int countAllNodes(struct Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        return countAllNodes(root->left) + countAllNodes(root->right) + 1;
+    }
+}
+
+int countLeafNodes(struct Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    else if (root->left == NULL && root->right == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return countLeafNodes(root->left) + countLeafNodes(root->right);
+    }
+}
+
+int countNonLeafNodes(struct Node *root)
+{
+    return (countAllNodes(root) - countLeafNodes(root));
+}
+
 int main(){
     
     return 0;
