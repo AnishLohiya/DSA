@@ -10,7 +10,7 @@ struct Node
 
 struct Node *root = NULL;
 
-struct Node *findMax(struct Node *root)
+struct Node *FindMax(struct Node *root)
 {
     while (root->right != NULL)
     {
@@ -19,7 +19,7 @@ struct Node *findMax(struct Node *root)
     return root;
 }
 
-struct Node *findMin(struct Node *root)
+struct Node *FindMin(struct Node *root)
 {
     while (root->left != NULL)
     {
@@ -91,7 +91,7 @@ struct Node *delete (struct Node *root, int data)
         }
         else
         {
-            struct Node *temp = findMin(root->right);
+            struct Node *temp = FindMin(root->right);
             root->data = temp->data;
             root->right = delete (root->right, temp->data);
         }
