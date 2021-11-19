@@ -257,6 +257,78 @@ int main(){
         printf("16.EXIT\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter the data to be inserted: ");
+            scanf("%d", &data);
+            root = insert(root, data);
+            break;
+        case 2:
+            printf("Enter the data to be deleted: ");
+            scanf("%d", &data);
+            root = delete (root, data);
+            break;
+        case 3:
+            printf("Enter the data to be searched: ");
+            scanf("%d", &val);
+            search(root, val);
+            break;
+        case 4:
+            printf("Height of the tree is %d\n", FindHeight(root));
+            break;
+        case 5:
+            printf("INORDER: ");
+            InOrder(root);
+            printf("\n");
+            break;
+        case 6:
+            printf("PREORDER: ");
+            PreOrder(root);
+            printf("\n");
+            break;
+        case 7:
+            printf("POSTORDER: ");
+            PostOrder(root);
+            printf("\n");
+            break;
+        case 8:
+            printf("Total number of nodes in the tree is %d\n", countAllNodes(root));
+            break;
+        case 9:
+            printf("Total number of leaf nodes in the tree is %d\n", countLeafNodes(root));
+            break;
+        case 10:
+            printf("Total number of non-leaf nodes in the tree is %d\n", countNonLeafNodes(root));
+            break;
+        case 11:
+            printf("MINIMUM value in the tree is %d\n", FindMin(root));
+            break;
+        case 12:
+            printf("MAXIMUM value in the tree is %d\n", FindMax(root));
+            break;
+        case 13:
+            printTree(root, 0);
+            break;
+        case 14:
+            printf("Tree before mirroring\n");
+            printTree(root, 0);
+            printf("Tree after mirroring\n");
+            MirrorTree(root);
+            printTree(root, 0);
+            break;
+        case 15:
+            printf("Tree before excise\n");
+            printTree(root, 0);
+            printf("Tree after excise\n");
+            deleteCompleteTree(root);
+            break;
+        case 16:
+            exit(0);
+        default:
+            printf("Wrong choice\n");
+        };
     }
     return 0;
 }
