@@ -24,3 +24,5 @@
    - Queue using ***Linked List***  [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_linked_list.c) 
    - ***Cirular*** Queue using ***Array***   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_array.c) 
    - ***Circular*** Queue using ***Linked List***   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_linked_list.c) 
+- [Trees](https://github.com/AnishLohiya/DSA-in-C/tree/master/Trees)
+  - Binary Search Tree
