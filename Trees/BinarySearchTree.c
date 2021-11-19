@@ -204,6 +204,17 @@ void MirrorTree(struct Node *root)
     root->right = temp;
 }
 
+struct Node *deleteCompleteTree(struct Node *root)
+{
+    if (root != NULL)
+    {
+        deleteCompleteTree(root->left);
+        deleteCompleteTree(root->right);
+        free(root);
+        root = NULL;
+    }
+}
+
 int main(){
     
     return 0;
