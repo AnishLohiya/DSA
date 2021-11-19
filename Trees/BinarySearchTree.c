@@ -154,6 +154,17 @@ int countNonLeafNodes(struct Node *root)
     return (countAllNodes(root) - countLeafNodes(root));
 }
 
+void PreOrder(struct Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    printf("%d ", root->data);
+    PreOrder(root->left);
+    PreOrder(root->right);
+}
+
 void InOrder(struct Node *root)
 {
     if (root == NULL)
