@@ -246,9 +246,9 @@ int main(){
         printf("5.INORDER\n");
         printf("6.PREORDER\n");
         printf("7.POSTORDER\n");
-        printf("8.TOTAL number of nodes\n");
-        printf("9.Number of LEAF nodes\n");
-        printf("10.Number of NON-LEAF nodes\n");
+        printf("8.Total number of nodes\n");
+        printf("9.Number of Leaf nodes\n");
+        printf("10.Number of Non-Leaf nodes\n");
         printf("11.Find MIN\n");
         printf("12.Find MAX\n");
         printf("13.Display\n");
