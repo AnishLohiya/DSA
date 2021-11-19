@@ -99,6 +99,28 @@ struct Node *delete (struct Node *root, int data)
     return root;
 }
 
+void search(struct Node *root, int val)
+{
+    if (root->data == val)
+    {
+        printf("%d is present in the tree\n", val);
+        return;
+    }
+    if ((root->right == NULL && root->left == NULL) || root == NULL)
+    {
+        printf("Elment Not present in the tree\n");
+        return;
+    }
+    if (val <= root->data)
+    {
+        search(root->left, val);
+    }
+    else
+    {
+        search(root->right, val);
+    }
+}
+
 int main(){
     
     return 0;
