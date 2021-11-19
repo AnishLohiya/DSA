@@ -204,6 +204,25 @@ void MirrorTree(struct Node *root)
     root->right = temp;
 }
 
+void printTree(struct Node *root, int space)
+{
+    if (root == NULL)
+        return;
+
+    space += 5;
+
+    printTree(root->right, space);
+
+    printf("\n");
+    for (int i = 5; i < space; i++)
+    {
+        printf(" ");
+    }
+    printf("%d\n", root->data);
+
+    printTree(root->left, space);
+}
+
 struct Node *deleteCompleteTree(struct Node *root)
 {
     if (root != NULL)
