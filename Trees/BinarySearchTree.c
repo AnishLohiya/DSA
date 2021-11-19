@@ -56,6 +56,49 @@ struct Node *insert(struct Node *root, int data)
     return root;
 }
 
+struct Node *delete (struct Node *root, int data)
+{
+    if (root == NULL)
+    {
+        return root;
+    }
+    else if (data < root->data)
+    {
+        root->left = delete (root->left, data);
+    }
+    else if (data > root->data)
+    {
+        root->right = delete (root->right, data);
+    }
+    else
+    {
+        if (root->left == NULL && root->right == NULL)
+        {
+            free(root);
+            root = NULL;
+        }
+        else if (root->right == NULL)
+        {
+            struct Node *temp = root;
+            root = root->left;
+            free(temp);
+        }
+        else if (root->left == NULL)
+        {
+            struct Node *temp = root;
+            root = root->right;
+            free(temp);
+        }
+        else
+        {
+            struct Node *temp = findMin(root->right);
+            root->data = temp->data;
+            root->right = delete (root->right, temp->data);
+        }
+    }
+    return root;
+}
+
 int main(){
     
     return 0;
