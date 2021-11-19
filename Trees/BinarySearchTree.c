@@ -19,6 +19,24 @@ struct Node *findMax(struct Node *root)
     return root;
 }
 
+struct Node *findMin(struct Node *root)
+{
+    while (root->left != NULL)
+    {
+        root = root->left;
+    }
+    return root;
+}
+
+struct Node *createNewNode(int data)
+{
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
 int main(){
     
     return 0;
