@@ -176,6 +176,17 @@ void InOrder(struct Node *root)
     InOrder(root->right);
 }
 
+void PostOrder(struct Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    PostOrder(root->left);
+    PostOrder(root->right);
+    printf("%d ", root->data);
+}
+
 int main(){
     
     return 0;
