@@ -235,6 +235,28 @@ struct Node *deleteCompleteTree(struct Node *root)
 }
 
 int main(){
-    
+    struct Node *temp;
+    int data, choice, val, i;
+    while (1)
+    {
+        printf("1.Insert\n");
+        printf("2.Delete\n");
+        printf("3.Search\n");
+        printf("4.Height\n");
+        printf("5.INORDER\n");
+        printf("6.PREORDER\n");
+        printf("7.POSTORDER\n");
+        printf("8.TOTAL number of nodes\n");
+        printf("9.Number of LEAF nodes\n");
+        printf("10.Number of NON-LEAF nodes\n");
+        printf("11.Find MIN\n");
+        printf("12.Find MAX\n");
+        printf("13.Display\n");
+        printf("14.Mirror\n");
+        printf("15.Excise Tree\n");
+        printf("16.EXIT\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+    }
     return 0;
 }
