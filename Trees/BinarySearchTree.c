@@ -37,6 +37,25 @@ struct Node *createNewNode(int data)
     return newNode;
 }
 
+struct Node *insert(struct Node *root, int data)
+{
+    if (root == NULL)
+    {
+        root = createNewNode(data);
+        return root;
+    }
+    if (data < root->data)
+    {
+        root->left = insert(root->left, data);
+    }
+    else
+    {
+        root->right = insert(root->right, data);
+    }
+
+    return root;
+}
+
 int main(){
     
     return 0;
