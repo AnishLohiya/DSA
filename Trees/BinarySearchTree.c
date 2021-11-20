@@ -154,6 +154,22 @@ int countNonLeafNodes(struct Node *root)
     return (countAllNodes(root) - countLeafNodes(root));
 }
 
+int FindHeight(struct Node *root)
+{
+    int leftHeight, rightHeight;
+    if (root == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        leftHeight = FindHeight(root->left);
+        rightHeight = FindHeight(root->right);
+
+        return (leftHeight > rightHeight) ? leftHeight + 1 : rightHeight + 1;
+    }
+}
+
 void PreOrder(struct Node *root)
 {
     if (root == NULL)
