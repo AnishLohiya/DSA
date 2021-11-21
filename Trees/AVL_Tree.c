@@ -54,6 +54,15 @@ int FindHeight(struct Node *root)
     return root->height;
 }
 
+int getBalanceFactor(struct Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return (FindHeight(root->left) - FindHeight(root->right));
+}
+
 int main(){
     
     return 0;
