@@ -236,6 +236,33 @@ void search(struct Node *root, int data)
     }
 }
 
+void InOrder(struct Node *root)
+{
+    if (root != NULL)
+    {
+        InOrder(root->left);
+        printf("%d ", root->data);
+        InOrder(root->right);
+    }
+}
+
+void display(struct Node *root, int space)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    space += 10;
+    display(root->right, space);
+    printf("\n");
+    for (int i = 10; i < space; i++)
+    {
+        printf(" ");
+    }
+    printf("%d\n", root->data);
+    display(root->left, space);
+}
+
 int main(){
     
     return 0;
