@@ -63,6 +63,34 @@ int getBalanceFactor(struct Node *root)
     return (FindHeight(root->left) - FindHeight(root->right));
 }
 
+struct Node *rightRotate(struct Node *root)
+{
+    struct Node *leftChild = root->left;
+    struct Node *leftRightChild = leftChild->right;
+
+    leftChild->right = root;
+    root->left = leftRightChild;
+
+    root->height = Max(FindHeight(root->left), FindHeight(root->right)) + 1;
+    leftChild->height = Max(FindHeight(leftChild->left), FindHeight(leftChild->right)) + 1;
+
+    return leftChild;
+}
+
+struct Node *leftRotate(struct Node *root)
+{
+    struct Node *rightChild = root->right;
+    struct Node *rightLeftChild = rightChild->left;
+
+    rightChild->left = root;
+    root->right = rightLeftChild;
+
+    root->height = Max(FindHeight(root->left), FindHeight(root->right)) + 1;
+    rightChild->height = Max(FindHeight(rightChild->left), FindHeight(rightChild->right)) + 1;
+
+    return rightChild;
+}
+
 int main(){
     
     return 0;
