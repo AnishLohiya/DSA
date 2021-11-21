@@ -135,6 +135,107 @@ struct Node *insert(struct Node *root, int data)
     return root;
 }
 
+struct Node *delete (struct Node *root, int data) // delete node with given data
+{
+    if (root == NULL)
+    {
+        return root;
+    }
+    if (data < root->data)
+    {
+        root->left = delete (root->left, data);
+    }
+    else if (data > root->data)
+    {
+        root->right = delete (root->right, data);
+    }
+    else
+    {
+        if (root->left == NULL && root->right == NULL)
+        {
+            free(root);
+            root = NULL;
+            return root;
+        }
+        if (root->left == NULL)
+        {
+            struct Node *temp = root;
+            root = root->right;
+            free(temp);
+            return root;
+        }
+        if (root->right == NULL)
+        {
+            struct Node *temp = root;
+            root = root->left;
+            free(temp);
+            return root;
+        }
+        struct Node *temp = FindMin(root->right);
+        root->data = temp->data;
+        root->right = delete (root->right, temp->data);
+    }
+
+    if (root == NULL)
+    {
+        return root;
+    }
+
+    root->height = Max(FindHeight(root->left), FindHeight(root->right)) + 1;
+    int balanceFactor = getBalanceFactor(root);
+
+    if (balanceFactor > 1 && getBalanceFactor(root->left) >= 0)
+    {
+        return rightRotate(root);
+    }
+    if (balanceFactor > 1 && getBalanceFactor(root->left) < 0)
+    {
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+    if (balanceFactor < -1 && getBalanceFactor(root->right) <= 0)
+    {
+        return leftRotate(root);
+    }
+    if (balanceFactor < -1 && getBalanceFactor(root->right) > 0)
+    {
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
+    return root;
+}
+
+int countAllNodes(struct Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return 1 + countAllNodes(root->left) + countAllNodes(root->right);
+}
+
+void search(struct Node *root, int data)
+{
+    if (root == NULL)
+    {
+        printf("Element not found\n");
+        return;
+    }
+    if (data == root->data)
+    {
+        printf("Element found\n");
+        return;
+    }
+    if (data < root->data)
+    {
+        search(root->left, data);
+    }
+    else
+    {
+        search(root->right, data);
+    }
+}
+
 int main(){
     
     return 0;
