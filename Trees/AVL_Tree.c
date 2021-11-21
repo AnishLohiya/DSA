@@ -20,6 +20,20 @@ struct Node *FindMax(struct Node *root)
     return root;
 }
 
+struct Node *FindMin(struct Node *root)
+{
+    while (root->left != NULL)
+    {
+        root = root->left;
+    }
+    return root;
+}
+
+int Max(int n1, int n2)
+{
+    return n1 > n2 ? n1 : n2;
+}
+
 int main(){
     
     return 0;
