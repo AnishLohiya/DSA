@@ -1,4 +1,4 @@
-# [DSA-in-C](https://github.com/AnishLohiya/DSA-in-C)
+# [DSA](https://github.com/AnishLohiya/DSA)
 
 <h1 align="center">Data Structures and Algorithms in C</h1>
 <p align="center">
