@@ -264,6 +264,58 @@ void display(struct Node *root, int space)
 }
 
 int main(){
-    
+    struct Node *temp;
+    int data, choice, val, i;
+    while (1)
+    {
+        printf("1.Insert\n");
+        printf("2.Delete\n");
+        printf("3.Search\n");
+        printf("4.Height\n");
+        printf("5.Inorder\n");
+        printf("6.Total number of nodes\n");
+        printf("7.Display\n");
+        printf("8.EXIT\n");
+        
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+            case 1:
+                printf("Enter the data to be inserted: ");
+                scanf("%d", &data);
+                root = insert(root, data);
+                break;
+            case 2:
+                printf("Enter the data to be deleted: ");
+                scanf("%d", &data);
+                root = delete (root, data);
+                break;
+            case 3:
+                printf("Enter the data to be searched: ");
+                scanf("%d", &val);
+                search(root, val);
+                break;
+            case 4:
+                printf("Height of the tree is %d\n", FindHeight(root));
+                break;
+            case 5:
+                printf("INORDER: ");
+                InOrder(root);
+                printf("\n");
+                break;
+            case 6:
+                printf("Total number of nodes in the tree is %d\n", countAllNodes(root));
+                break;
+            case 7:
+                display(root, 0);
+                break;
+            case 8:
+                exit(0);
+            default:
+                printf("Wrong choice\n");
+        };
+    }
     return 0;
 }
