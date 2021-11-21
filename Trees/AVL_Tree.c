@@ -91,6 +91,50 @@ struct Node *leftRotate(struct Node *root)
     return rightChild;
 }
 
+struct Node *insert(struct Node *root, int data)
+{
+    if (root == NULL)
+    {
+        root = getNewNode(data);
+        return root;
+    }
+    if (data < root->data)
+    {
+        root->left = insert(root->left, data);
+    }
+    else if (data > root->data)
+    {
+        root->right = insert(root->right, data);
+    }
+    else
+    {
+        return root;
+    }
+
+    root->height = Max(FindHeight(root->left), FindHeight(root->right)) + 1;
+    int balanceFactor = getBalanceFactor(root);
+
+    if (balanceFactor > 1 && data < root->left->data)
+    {
+        return rightRotate(root);
+    }
+    if (balanceFactor < -1 && data > root->right->data)
+    {
+        return leftRotate(root);
+    }
+    if (balanceFactor > 1 && data > root->left->data)
+    {
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+    if (balanceFactor < -1 && data < root->right->data)
+    {
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
+    return root;
+}
+
 int main(){
     
     return 0;
