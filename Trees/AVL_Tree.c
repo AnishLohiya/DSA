@@ -184,20 +184,20 @@ struct Node *delete (struct Node *root, int data) // delete node with given data
     root->height = Max(FindHeight(root->left), FindHeight(root->right)) + 1;
     int balanceFactor = getBalanceFactor(root);
 
-    if (balanceFactor > 1 && getBalanceFactor(root->left) >= 0)
+    if (balanceFactor > 1 && getBalanceFactor(root->left) >= 0)       // LEFT-LEFT
     {
         return rightRotate(root);
     }
-    if (balanceFactor > 1 && getBalanceFactor(root->left) < 0)
+    if (balanceFactor > 1 && getBalanceFactor(root->left) < 0)        // RIGHT-RIGHT
     {
         root->left = leftRotate(root->left);
         return rightRotate(root);
     }
-    if (balanceFactor < -1 && getBalanceFactor(root->right) <= 0)
-    {
+    if (balanceFactor < -1 && getBalanceFactor(root->right) <= 0)     // LEFT-RIGHT
+    { 
         return leftRotate(root);
     }
-    if (balanceFactor < -1 && getBalanceFactor(root->right) > 0)
+    if (balanceFactor < -1 && getBalanceFactor(root->right) > 0)      // RIGHT-LEFT
     {
         root->right = rightRotate(root->right);
         return leftRotate(root);
