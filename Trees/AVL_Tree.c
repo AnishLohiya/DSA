@@ -114,20 +114,20 @@ struct Node *insert(struct Node *root, int data)
     root->height = Max(FindHeight(root->left), FindHeight(root->right)) + 1;
     int balanceFactor = getBalanceFactor(root);
 
-    if (balanceFactor > 1 && data < root->left->data)
+    if (balanceFactor > 1 && data < root->left->data)    // LEFT-LEFT
     {
-        return rightRotate(root);
+        return rightRotate(root);             
     }
-    if (balanceFactor < -1 && data > root->right->data)
+    if (balanceFactor < -1 && data > root->right->data)  // RIGHT-RIGHT
     {
         return leftRotate(root);
     }
-    if (balanceFactor > 1 && data > root->left->data)
+    if (balanceFactor > 1 && data > root->left->data)    // LEFT-RIGHT
     {
         root->left = leftRotate(root->left);
         return rightRotate(root);
     }
-    if (balanceFactor < -1 && data < root->right->data)
+    if (balanceFactor < -1 && data < root->right->data)  // RIGHT-LEFT
     {
         root->right = rightRotate(root->right);
         return leftRotate(root);
