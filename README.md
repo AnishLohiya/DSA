@@ -27,3 +27,6 @@
 - [Trees](https://github.com/AnishLohiya/DSA-in-C/tree/master/Trees)
   - ***AVL*** Tree [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Trees/AVL_Tree.c)
   - ***Binary Search*** Tree  [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Trees/BinarySearchTree.c)
+- [Graphs](https://github.com/AnishLohiya/DSA/tree/master/Graphs)
+  - ***BFS*** Traversal [📜](https://github.com/AnishLohiya/DSA/blob/master/Graphs/BFS.c)
+  - ***DFS*** Traversal [📜](https://github.com/AnishLohiya/DSA/blob/master/Graphs/DFS.c)
