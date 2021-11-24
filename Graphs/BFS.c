@@ -88,6 +88,6 @@ void BFSTraversal(int G[][5], int start, int n)
 }
 
 int main(){
-    
+    BFSTraversal(G, start, n);
     return 0;
 }
