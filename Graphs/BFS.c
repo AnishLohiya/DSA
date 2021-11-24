@@ -37,6 +37,35 @@ void enqueue(int x)
     }
 }
 
+int dequeue()
+{
+    int x = -1;
+    if (front == NULL)
+    {
+        printf("Queue is empty\n");
+    }
+    else
+    {
+        struct Node *temp = front;
+        x = temp->data;
+        front = front->next;
+        free(temp);
+    }
+    return x;
+}
+
+int isEmpty()
+{
+    if (front == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 int main(){
     
     return 0;
