@@ -16,6 +16,27 @@ struct Node
     struct Node *next;
 };
 
+struct Node *front = NULL;
+struct Node *rear = NULL;
+
+void enqueue(int x)
+{
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    temp->data = x;
+    temp->next = NULL;
+
+    if (front == NULL)
+    {
+        front = temp;
+        rear = temp;
+    }
+    else
+    {
+        rear->next = temp;
+        rear = temp;
+    }
+}
+
 int main(){
     
     return 0;
