@@ -66,6 +66,27 @@ int isEmpty()
     }
 }
 
+void BFSTraversal(int G[][5], int start, int n)
+{
+    int i, j;
+    int visited[5] = {0};
+    enqueue(start);
+    visited[start] = 1;
+    while (!isEmpty())
+    {
+        i = dequeue();
+        printf("%d ", i);
+        for (j = 1; j < n; j++)
+        {
+            if (G[i][j] == 1 && visited[j] == 0)
+            {
+                enqueue(j);
+                visited[j] = 1;
+            }
+        }
+    }
+}
+
 int main(){
     
     return 0;
