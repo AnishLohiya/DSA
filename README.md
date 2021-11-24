@@ -30,3 +30,6 @@
 - [Graphs](https://github.com/AnishLohiya/DSA/tree/master/Graphs)
   - ***BFS*** Traversal [📜](https://github.com/AnishLohiya/DSA/blob/master/Graphs/BFS.c)
   - ***DFS*** Traversal [📜](https://github.com/AnishLohiya/DSA/blob/master/Graphs/DFS.c)
+- [Searching](https://github.com/AnishLohiya/DSA/tree/master/Searching)
+  - ***Binary*** Search [📜](https://github.com/AnishLohiya/DSA/blob/master/Searching/BinarySearch.c) 
+  - ***Linear*** Search [📜](https://github.com/AnishLohiya/DSA/blob/master/Searching/LinearSearch.c)
