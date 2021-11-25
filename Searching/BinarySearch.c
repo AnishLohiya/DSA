@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void BinarySearch(int *arr, int x)
+void BinarySearch(int arr[], int n, int x)
 {
-    int l = 0, r = sizeof(arr) / sizeof(arr[0]) - 1, mid;
+    int l = 0, r = n - 1, mid;
     while (l <= r)
     {
         mid = l + (r - l) / 2;
@@ -22,7 +22,8 @@ void BinarySearch(int *arr, int x)
 int main()
 {
     int arr[10] = {10, 21, 33, 45, 56, 69, 70, 81, 99, 102};
-    int key = 21;
-    BinarySearch(arr, key);
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int key = 56;
+    BinarySearch(arr, n, key);
     return 0;
 }
