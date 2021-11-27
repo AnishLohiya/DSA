@@ -188,12 +188,12 @@ struct Node *delete (struct Node *root, int data) // delete node with given data
     {
         return rightRotate(root);
     }
-    if (balanceFactor > 1 && getBalanceFactor(root->left) < 0)        // RIGHT-RIGHT
+    if (balanceFactor > 1 && getBalanceFactor(root->left) < 0)        // LEFT-RIGHT
     {
         root->left = leftRotate(root->left);
         return rightRotate(root);
     }
-    if (balanceFactor < -1 && getBalanceFactor(root->right) <= 0)     // LEFT-RIGHT
+    if (balanceFactor < -1 && getBalanceFactor(root->right) <= 0)     // RIGHT-RIGHT
     { 
         return leftRotate(root);
     }
