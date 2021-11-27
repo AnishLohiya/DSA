@@ -33,3 +33,7 @@
 - [Searching](https://github.com/AnishLohiya/DSA/tree/master/Searching)
   - ***Binary*** Search [📜](https://github.com/AnishLohiya/DSA/blob/master/Searching/BinarySearch.c) 
   - ***Linear*** Search [📜](https://github.com/AnishLohiya/DSA/blob/master/Searching/LinearSearch.c)
+- [Sorting](https://github.com/AnishLohiya/DSA/tree/master/Sorting) 
+  - ***Bubble*** Sort [📜](https://github.com/AnishLohiya/DSA/blob/master/Sorting/Bubble_Sort.c) 
+  - ***Insertion*** Sort [📜](https://github.com/AnishLohiya/DSA/blob/master/Sorting/Insertion_Sort.c) 
+  - ***Selection*** Sort [📜](https://github.com/AnishLohiya/DSA/blob/master/Sorting/Selection_Sort.c)   
