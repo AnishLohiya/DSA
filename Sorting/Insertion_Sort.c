@@ -7,7 +7,7 @@ int main()
     scanf("%d", &n);
     int a[n];
 
-    printf("\nEnter the elements: ");
+    printf("Enter the elements: ");
     for (i = 0; i < n; i++)
     {
         scanf("%d", &a[i]);
@@ -24,7 +24,7 @@ int main()
         a[j + 1] = temp;
     }
 
-    printf("\nThe sorted array is: ");
+    printf("The sorted array is: ");
     for (i = 0; i < n; i++)
     {
         printf("%d ", a[i]);
