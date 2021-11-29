@@ -4,13 +4,13 @@
 
 struct Node
 {
-    char data;
+    int data;
     struct Node *next;
 };
 
 struct Node *top = NULL;
 
-void push(char x)
+void push(int x)
 {
     struct Node *t;
     t = (struct Node *)malloc(sizeof(struct Node));
@@ -23,10 +23,11 @@ void push(char x)
         top = t;
     }
 }
-char pop()
+
+int pop()
 {
     struct Node *t;
-    char x = -1;
+    int x = -1;
     if (top == NULL)
         printf("Stack is Empty\n");
     else
@@ -39,7 +40,7 @@ char pop()
     return x;
 }
 
-int pre(char x)
+int precedence(char x)
 {
     if (x == '+' || x == '-')
         return 1;
@@ -56,11 +57,12 @@ int isOperand(char x)
         return 1;
 }
 
-char *InToPost(char *infix)
+char *InfixToPostfix(char *infix)
 {
     int i = 0, j = 0;
     char *postfix;
-    int len = strlen(infix);
+    push('(');
+    long len = strlen(infix);
     postfix = (char *)malloc((len + 2) * sizeof(char));
     while (infix[i] != '\0')
     {
@@ -68,7 +70,7 @@ char *InToPost(char *infix)
             postfix[j++] = infix[i++];
         else
         {
-            if (pre(infix[i]) > pre(top->data))
+            if (precedence(infix[i]) > precedence(top->data))
                 push(infix[i++]);
             else
             {
@@ -76,7 +78,7 @@ char *InToPost(char *infix)
             }
         }
     }
-    while (top != NULL)
+    while (top->data != '(')
         postfix[j++] = pop();
     postfix[j] = '\0';
     return postfix;
@@ -84,9 +86,8 @@ char *InToPost(char *infix)
 
 int main()
 {
-    char *infix = "a+b*c-d/e";
-    push('#');
-    char *postfix = InToPost(infix);
-    printf("%s ", postfix);
+    char *infix = "4+2*3-6/2";
+    char *postfix = InfixToPostfix(infix);
+    printf("Postfix expression after conversion: %s\n", postfix);
     return 0;
 }
