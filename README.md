@@ -39,3 +39,5 @@
   - ***Bubble*** Sort [📜](https://github.com/AnishLohiya/DSA/blob/master/Sorting/Bubble_Sort.c) 
   - ***Insertion*** Sort [📜](https://github.com/AnishLohiya/DSA/blob/master/Sorting/Insertion_Sort.c) 
   - ***Selection*** Sort [📜](https://github.com/AnishLohiya/DSA/blob/master/Sorting/Selection_Sort.c)   
+  - ***Quick*** Sort  [📜](https://github.com/AnishLohiya/DSA/blob/master/Sorting/Quick_Sort.c)
+  - ***Merge*** Sort  [📜](https://github.com/AnishLohiya/DSA/blob/master/Sorting/Merge_Sort.c)
