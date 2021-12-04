@@ -19,6 +19,8 @@
 - [Stack](https://github.com/AnishLohiya/DSA-in-C/tree/master/Stack)
    - Stack Using ***Array***   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Stack/stack_using_arrays.c) 
    - Stack using ***Linked List***  [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Stack/stack_using_linked_list.c) 
+   - ***Infix to Postfix*** Conversion  [📜](https://github.com/AnishLohiya/DSA/blob/master/Stack/Infix_To_Postfix.c)
+   - Evaluate ***Postfix***  [📜](https://github.com/AnishLohiya/DSA/blob/master/Stack/EvaluatePostfix.c)
 - [Queue](https://github.com/AnishLohiya/DSA-in-C/tree/master/Queue)
    - Queue using ***Array***   [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_array.c) 
    - Queue using ***Linked List***  [📜](https://github.com/AnishLohiya/DSA-in-C/blob/master/Queue/queue_using_linked_list.c) 
