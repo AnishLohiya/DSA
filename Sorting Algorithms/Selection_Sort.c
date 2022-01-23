@@ -1,40 +1,43 @@
 #include <stdio.h>
 
-int main()
+void SelectionSort(int a[], int n)
 {
-    int i, j, n, temp, min;
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-    int a[n];
-    printf("Enter the elements: ");
-    for (i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
-
-    for (i = 0; i < n; i++)
+    int min;
+    for (int i = 0; i < n; i++)
     {
         min = i;
-        for (j = i + 1; j < n; j++)
+        for (int j = i + 1; j < n; j++)
         {
             if (a[j] < a[min])
             {
                 min = j;
             }
         }
-
         if (min != i)
         {
-            temp = a[i];
+            int temp = a[i];
             a[i] = a[min];
             a[min] = temp;
         }
     }
+}
 
-    printf("Sorted array: ");
-    for (i = 0; i < n; i++)
+void printArray(int a[], int n)
+{
+    for (int i = 0; i < n; i++)
     {
         printf("%d ", a[i]);
     }
+}
+
+int main()
+{
+    int a[] = {64, 25, 12, 22, 11, 90};
+    int n = sizeof(a) / sizeof(a[0]);
+    printf("Array before sorting:\n");
+    printArray(a, n);
+    SelectionSort(a, n);
+    printf("\nArray after sorting:\n");
+    printArray(a, n);
     return 0;
 }
