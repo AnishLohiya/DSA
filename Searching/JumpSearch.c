@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int jump_search(int arr[], int n, int jump, int target)
+int JumpSearch(int arr[], int n, int jump, int target)
 {
     int start = 0, end = jump;
     while (end < n)
